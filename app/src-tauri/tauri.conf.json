@@ -1,0 +1,47 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "ett",
+  "identifier": "com.drdoriangray.ett",
+  "build": {
+    "frontendDist": "../build",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "ett",
+        "width": 500,
+        "height": 130,
+        "center": true,
+        "transparent": false,
+        "dragDropEnabled": false,
+        "skipTaskbar": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/icon.png",
+      "icons/icon.ico"
+    ],
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "windows": {
+        "install-mode": "passive"
+      },
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDJCRDVGNzk0MUJEQkZCQTkKUldTcCs5c2JsUGZWSzVqMWN5ZWNQQlM5MDdiZmRpOVFyUFUyV2JZYjVhRTJPVXB2N2pBdU9iTk4K",
+      "endpoints": [
+        "https://github.com/drdoriangray/ett/releases/latest/download/latest.json"
+      ]
+    }
+  }
+}
